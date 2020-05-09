@@ -1,4 +1,7 @@
+import axios, {AxiosResponse} from "axios";
+
 interface UserProps {
+  id?: number;
   name?: string;
   age?: number;
 }
@@ -33,6 +36,26 @@ class User{
     const eventhandlers = this.events[eventName];
     if( eventhandlers && eventhandlers.length > 0 ){
       eventhandlers.forEach( eventHandler => eventHandler() );
+    }
+  }
+
+  fetch(): void{
+    const userID = this.get('id');
+    if(userID){
+      axios
+        .get(`http://localhost:3000/users/${userID}`)
+        .then((response: AxiosResponse): void=>{
+          this.set(response.data);
+      })
+    }
+  }
+
+  save(): void {
+    const userID = this.get('id');
+    if (userID) {
+      axios.put(`http://localhost:3000/users/${userID}`,this.data);
+    } else {
+      axios.post('http://localhost:3000/users',this.data);
     }
   }
 }
