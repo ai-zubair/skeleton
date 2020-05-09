@@ -1,4 +1,5 @@
 import axios, {AxiosResponse} from "axios";
+import { Eventing } from "./Eventing";
 
 interface UserProps {
   id?: number;
@@ -6,15 +7,9 @@ interface UserProps {
   age?: number;
 }
 
-interface Events { 
-  [eventName: string]: EventHandler[];
-}
-interface EventHandler {
-  (): void;
-}
-
 class User{
-  events: Events = {};
+
+  events: Eventing = new Eventing();
 
   constructor(private data: UserProps){}
 
@@ -26,18 +21,7 @@ class User{
     Object.assign(this.data,update);
   }
 
-  on(eventName: string, eventHandler: EventHandler): void {
-    const eventHandlers = this.events[eventName] || [];
-    eventHandlers.push(eventHandler);
-    this.events[eventName] = eventHandlers;
-  }
 
-  trigger(eventName: string): void{
-    const eventhandlers = this.events[eventName];
-    if( eventhandlers && eventhandlers.length > 0 ){
-      eventhandlers.forEach( eventHandler => eventHandler() );
-    }
-  }
 
   fetch(): void{
     const userID = this.get('id');
