@@ -1,15 +1,17 @@
-import axios, {AxiosResponse} from "axios";
 import { Eventing } from "./Eventing";
+import { Sync } from "./Sync";
 
-interface UserProps {
+export interface UserProps {
   id?: number;
   name?: string;
   age?: number;
 }
 
 class User{
+  static readonly userAPIurl: string = "http://localhost:3000/users";
 
   events: Eventing = new Eventing();
+  sync: Sync<UserProps> = new Sync<UserProps>(User.userAPIurl);
 
   constructor(private data: UserProps){}
 
@@ -19,28 +21,6 @@ class User{
 
   set(update: UserProps): void {
     Object.assign(this.data,update);
-  }
-
-
-
-  fetch(): void{
-    const userID = this.get('id');
-    if(userID){
-      axios
-        .get(`http://localhost:3000/users/${userID}`)
-        .then((response: AxiosResponse): void=>{
-          this.set(response.data);
-      })
-    }
-  }
-
-  save(): void {
-    const userID = this.get('id');
-    if (userID) {
-      axios.put(`http://localhost:3000/users/${userID}`,this.data);
-    } else {
-      axios.post('http://localhost:3000/users',this.data);
-    }
   }
 }
 
