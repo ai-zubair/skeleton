@@ -8,13 +8,14 @@ interface EventHandler {
 class Eventing {
   events: Events = {};
 
-  on(eventName: string, eventHandler: EventHandler): void {
+  on = (eventName: string, eventHandler: EventHandler): void => {
+    console.log(this);
     const eventHandlers = this.events[eventName] || [];
     eventHandlers.push(eventHandler);
     this.events[eventName] = eventHandlers;
   }
 
-  trigger(eventName: string): void{
+  trigger = (eventName: string): void =>{
     const eventhandlers = this.events[eventName];
     if( eventhandlers && eventhandlers.length > 0 ){
       eventhandlers.forEach( eventHandler => eventHandler() );
