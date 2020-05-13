@@ -9,7 +9,6 @@ class Eventing {
   events: Events = {};
 
   on = (eventName: string, eventHandler: EventHandler): void => {
-    console.log(this);
     const eventHandlers = this.events[eventName] || [];
     eventHandlers.push(eventHandler);
     this.events[eventName] = eventHandlers;

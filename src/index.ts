@@ -7,35 +7,14 @@ const me = new User({
   age:12
 })
 
-// console.log(me)
+me.get("id");
 
-// // me.on("change",()=>{
-// //   console.log("Change event triggered")
-// // })
+me.on("change",()=>{
+  console.log("user data has changed!")
+})
 
-// // // console.log(me.get("id"));
-// // console.log(me.attributes.get("id"));
-
-// // me.trigger("change")
-// me.get ()
-// // console.log(me.get === Attributes.prototype.get);
-console.log(me)
-// console.log(me.get = "asdas");
-var test = me.get;
-
-// test = "" as string;
-
-
-
-// var help = "awesome";
-
-// const test = () => {
-//   console.log(this.help);
-// }
-
-// const obj = {
-//   help: "doomed",
-//   test
-// }
-
-// obj.test();
+setTimeout(() => {
+  me.set({
+    name: "Zubair"
+  })
+}, 3000);
