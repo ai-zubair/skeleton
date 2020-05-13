@@ -1,20 +1,21 @@
 import { User } from "./models/User";
-import { Attributes } from "./models/Attributes";
 
 const me = new User({
-  id: 23,
-  name: "Zubair",
-  age:12
+  name: "George Clooney",
+  age: 55
 })
 
-me.get("id");
+console.log(me.get("name"));
+console.log(me.get("age"));
 
 me.on("change",()=>{
-  console.log("user data has changed!")
+  console.log("user data has changed!",me);
+})
+
+me.on("save",()=>{
+  console.log("user has been saved to the server",me)
 })
 
 setTimeout(() => {
-  me.set({
-    name: "Zubair"
-  })
+  me.save();
 }, 3000);

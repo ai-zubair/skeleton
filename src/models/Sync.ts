@@ -9,7 +9,7 @@ class Sync<T extends Syncable>{
   constructor(public collectionAPIurl: string){}
 
   fetch = (id: number): AxiosPromise => {
-    return axios.get(`${this.collectionAPIurl}/${id}`)
+    return axios.get(`${this.collectionAPIurl}/${id}`);
   }
 
   save = (data: T): AxiosPromise => {
