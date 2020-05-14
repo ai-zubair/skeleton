@@ -1,10 +1,7 @@
 import axios, { AxiosPromise } from "axios";
+import { Syncable } from "../types/interfaces";
 
-interface Syncable{
-  id?: number;
-}
-
-class Sync<T extends Syncable>{
+class APISync<T extends Syncable>{
 
   constructor(public collectionAPIurl: string){}
 
@@ -24,4 +21,4 @@ class Sync<T extends Syncable>{
   
 }
 
-export { Sync }
+export { APISync }

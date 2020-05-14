@@ -1,8 +1,8 @@
 import { User } from "./models/User";
 
-const me = new User({
-  name: "George Clooney",
-  age: 55
+const me = User.createWithDefaultConfig({
+  name: "Gregory House",
+  age: 45
 })
 
 console.log(me.get("name"));

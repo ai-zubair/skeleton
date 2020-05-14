@@ -1,8 +1,6 @@
+import { EventHandler } from "../types/interfaces";
 interface Events { 
   [eventName: string]: EventHandler[];
-}
-interface EventHandler {
-  (): void;
 }
 
 class Eventing {

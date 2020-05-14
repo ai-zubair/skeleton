@@ -29,6 +29,11 @@
       "name": "George Clooney",
       "age": 55,
       "id": 6
+    },
+    {
+      "name": "Gregory House",
+      "age": 45,
+      "id": 7
     }
   ]
 }
