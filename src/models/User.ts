@@ -2,6 +2,8 @@ import { DataModel } from "./DataModel";
 import { Attributes } from "./Attributes";
 import { Eventing } from "./Eventing";
 import { APISync } from "./APISync";
+import { Collection } from "./Collection";
+
 interface UserProps {
   id?: number;
   name?: string;
@@ -17,6 +19,13 @@ class User extends DataModel<UserProps>{
       new Eventing(),
       new APISync<UserProps>(User.usersAPIurl)
     );
+  }
+
+  static createUserCollection(): Collection<User,UserProps> {
+    return new Collection<User, UserProps>(
+      User.usersAPIurl,
+      User.createWithDefaultConfig
+    )
   }
 
 }
