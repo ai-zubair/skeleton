@@ -2,7 +2,7 @@ import { DataModel } from "./DataModel";
 import { Attributes } from "./Attributes";
 import { Eventing } from "./Eventing";
 import { APISync } from "./APISync";
-export interface UserProps {
+interface UserProps {
   id?: number;
   name?: string;
   age?: number;
