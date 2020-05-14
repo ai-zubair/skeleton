@@ -1,5 +1,5 @@
 import { DataModel } from "./DataModel";
-import { Attributes } from "./Attributes";
+import { Attributes } from "../prop/Attributes";
 import { Eventing } from "../event/Eventing";
 import { APISync } from "../sync/APISync";
 import { Collection } from "./Collection";
