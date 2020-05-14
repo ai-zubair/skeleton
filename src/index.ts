@@ -1,4 +1,4 @@
-import { User } from "./models/User";
+import { User } from "./models/data/User";
 
 // const me = User.createWithDefaultConfig({
 //   name: "Gregory House",

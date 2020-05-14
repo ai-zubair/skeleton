@@ -1,4 +1,4 @@
-import { EventHandler, Syncable } from "../types/interfaces";
+import { EventHandler, Syncable } from "../../types/interfaces";
 import { AxiosPromise, AxiosResponse } from "axios";
 
 interface Attributes<T>{

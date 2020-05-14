@@ -1,5 +1,5 @@
 import axios, { AxiosPromise } from "axios";
-import { Syncable } from "../types/interfaces";
+import { Syncable } from "../../types/interfaces";
 
 class APISync<T extends Syncable>{
 
