@@ -28,6 +28,12 @@ class User extends DataModel<UserProps>{
     )
   }
 
+  setRandomAge = ():void => {
+    const age = Math.floor(Math.random()*100) + 1;
+    this.set({
+      age
+    })
+  }
 }
 
 export { User }
