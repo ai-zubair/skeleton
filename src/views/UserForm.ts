@@ -9,9 +9,12 @@ class UserForm{
     this.model.on("change",this.render);
   }
 
-  onButtonClick = (): void => {
-    console.log(this)
-    console.log("Hey the butotn was clicked!");
+  onUpdateNameClick = (): void => {
+    const userInput = this.parent.querySelector("input#user-name-input") as HTMLInputElement;
+    const userName = userInput.value;
+    this.model.set({
+      name: userName
+    })
   }
 
   onSetRandomAgeClick = (): void => {
@@ -19,7 +22,7 @@ class UserForm{
   }
 
   eventMap: EventMap = {
-    "click:button#submit": this.onButtonClick,
+    "click:button#update-name": this.onUpdateNameClick,
     "click:button#random-age": this.onSetRandomAgeClick
   }
 
@@ -29,8 +32,8 @@ class UserForm{
         <h1>User Form</h1>
         <div>User Name:${this.model.get("name")}</div>
         <div>User Age:${this.model.get("age")}</div>
-        <input>
-        <button id="submit">Click Me</button>
+        <input id="user-name-input" type="text">
+        <button id="update-name">Update Name</button>
         <button id="random-age">Set Random Age</button>
       </div>
     `;
