@@ -10,11 +10,13 @@ class UserForm{
   }
 
   onUpdateNameClick = (): void => {
-    const userInput = this.parent.querySelector("input#user-name-input") as HTMLInputElement;
-    const userName = userInput.value;
-    this.model.set({
-      name: userName
-    })
+    const userInput = this.parent.querySelector("input");
+    if(userInput){
+      const userName = userInput.value;
+      this.model.set({
+        name: userName
+      })
+    }
   }
 
   onSetRandomAgeClick = (): void => {
