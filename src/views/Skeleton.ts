@@ -6,7 +6,7 @@ abstract class Skeleton<T extends DataModel<K>, K>{
     this.bindModel();
   }
 
-  abstract eventMap: EventMap;
+  eventMap: EventMap = {};
   abstract template: () => string;
 
   bindModel = (): void => {
