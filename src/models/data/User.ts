@@ -36,4 +36,4 @@ class User extends DataModel<UserProps>{
   }
 }
 
-export { User }
+export { User, UserProps }

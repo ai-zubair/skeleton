@@ -1,13 +1,7 @@
 import { EventMap } from "../types/interfaces";
-import { User } from "../models/data/User";
-class UserForm{
-  constructor(public parent: Element, public model: User){
-    this.bindModel();
-  }
-
-  bindModel = (): void => {
-    this.model.on("change",this.render);
-  }
+import { User, UserProps } from "../models/data/User";
+import { Skeleton } from "./Skeleton";
+class UserForm extends Skeleton<User, UserProps>{
 
   onUpdateNameClick = (): void => {
     const userInput = this.parent.querySelector("input");
@@ -41,24 +35,6 @@ class UserForm{
     `;
   }
 
-  bindEvents = (domSubTree: DocumentFragment): void => {
-    const eventMap = this.eventMap;
-    for (const eventKey in eventMap) {
-      const [ event, selector ] = eventKey.split(":");
-      const elements = domSubTree.querySelectorAll(selector);
-      elements.forEach((element: Element):void=>{
-        element.addEventListener(event,eventMap[eventKey]);
-      })
-    }
-  } 
-
-  render = (): void => {
-    this.parent.innerHTML = "";
-    const userForm = document.createElement("template");
-    userForm.innerHTML = this.template();
-    this.bindEvents(userForm.content);
-    this.parent.append(userForm.content);
-  }
 }
 
 export { UserForm }
