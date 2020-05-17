@@ -17,20 +17,23 @@ class UserForm extends Skeleton<User, UserProps>{
     this.model.setRandomAge();
   }
 
+  onSaveUserClick = (): void => {
+    this.model.save();
+  }
+
   eventMap: EventMap = {
     "click:button#update-name": this.onUpdateNameClick,
-    "click:button#random-age": this.onSetRandomAgeClick
+    "click:button#random-age": this.onSetRandomAgeClick,
+    "click:button#save-user": this.onSaveUserClick
   }
 
   template = (): string => {
     return `
       <div>
-        <h1>User Form</h1>
-        <div>User Name:${this.model.get("name")}</div>
-        <div>User Age:${this.model.get("age")}</div>
-        <input id="user-name-input" type="text">
+        <input id="user-name-input" type="text" placeholder=${this.model.get("name")}>
         <button id="update-name">Update Name</button>
         <button id="random-age">Set Random Age</button>
+        <button id="save-user">Save</button>
       </div>
     `;
   }
