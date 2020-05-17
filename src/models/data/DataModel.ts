@@ -40,7 +40,7 @@ class DataModel<T extends Syncable>{
   fetch = (): void => {
     const userID = this.get("id");
 
-    if(userID){
+    if(typeof userID === "number" ){
       this.sync.fetch(userID).then((response: AxiosResponse): void=>{
         this.set(response.data);
       })
