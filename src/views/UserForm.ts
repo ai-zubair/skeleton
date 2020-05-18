@@ -7,9 +7,7 @@ class UserForm extends Skeleton<User, UserProps>{
     const userInput = this.parent.querySelector("input");
     if(userInput){
       const userName = userInput.value;
-      this.model.set({
-        name: userName
-      })
+      this.model.set({ name: userName });
     }
   }
 

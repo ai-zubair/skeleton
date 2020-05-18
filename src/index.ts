@@ -1,10 +1,11 @@
 import { UserForm } from "./views/UserForm";
 import { User } from "./models/data/User";
+import { UserView } from "./views/UserView";
 
 const appRoot = document.getElementById("app");
 
 if(appRoot){
-  const user = new UserForm(
+  const user = new UserView(
     appRoot,
     User.createWithDefaultConfig({
       name: "Zubair",
@@ -12,6 +13,7 @@ if(appRoot){
     })
   );
   user.render();
+  console.log(user)
 }
 // setTimeout(()=>{
 //   user.render();
