@@ -1,5 +1,5 @@
-import { Skeleton } from "./Skeleton";
-import { User, UserProps } from "../models/data/User";
+import { Skeleton } from "../Skeleton";
+import { User, UserProps } from "../../models/data/mockup/User";
 import { UserDetails } from "./UserDetails";
 import { UserForm } from "./UserForm";
 

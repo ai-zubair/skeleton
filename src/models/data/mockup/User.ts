@@ -1,8 +1,8 @@
-import { DataModel } from "./DataModel";
-import { Attributes } from "../prop/Attributes";
-import { Eventing } from "../event/Eventing";
-import { APISync } from "../sync/APISync";
-import { Collection } from "./Collection";
+import { DataModel } from "../DataModel";
+import { Attributes } from "../../prop/Attributes";
+import { Eventing } from "../../event/Eventing";
+import { APISync } from "../../sync/APISync";
+import { Collection } from "../Collection";
 
 interface UserProps {
   id?: number;

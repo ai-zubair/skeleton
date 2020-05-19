@@ -1,6 +1,6 @@
-import { EventMap } from "../types/interfaces";
-import { User, UserProps } from "../models/data/User";
-import { Skeleton } from "./Skeleton";
+import { EventMap } from "../../types/interfaces";
+import { User, UserProps } from "../../models/data/mockup/User";
+import { Skeleton } from "../Skeleton";
 class UserForm extends Skeleton<User, UserProps>{
 
   onUpdateNameClick = (): void => {

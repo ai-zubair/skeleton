@@ -1,5 +1,5 @@
-import { CollectionView } from "./CollectionView";
-import { User, UserProps } from "../models/data/User";
+import { CollectionView } from "../CollectionView";
+import { User, UserProps } from "../../models/data/mockup/User";
 import { UserView } from "./UserView";
 
 class UserCollectionView extends CollectionView<User, UserProps>{

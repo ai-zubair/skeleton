@@ -1,5 +1,5 @@
-import { UserCollectionView } from "./views/UserCollectionView";
-import { User } from "./models/data/User";
+import { UserCollectionView } from "./views/mockup/UserCollectionView";
+import { User } from "./models/data/mockup/User";
 
 const appRoot = document.getElementById("app");
 
