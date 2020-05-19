@@ -1,20 +1,13 @@
-import { UserForm } from "./views/UserForm";
+import { UserCollectionView } from "./views/UserCollectionView";
 import { User } from "./models/data/User";
-import { UserView } from "./views/UserView";
 
 const appRoot = document.getElementById("app");
 
 if(appRoot){
-  const user = new UserView(
-    appRoot,
-    User.createWithDefaultConfig({
-      name: "Zubair",
-      age: 21
-    })
-  );
-  user.render();
-  console.log(user)
+  const modCollec = User.createUserCollection();
+  modCollec.on("change",()=>{
+    const userCollec = new UserCollectionView(appRoot,modCollec);
+    userCollec.render();
+  })
+  modCollec.fetch();
 }
-// setTimeout(()=>{
-//   user.render();
-// },3000) 

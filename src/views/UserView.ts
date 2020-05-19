@@ -6,8 +6,8 @@ import { UserForm } from "./UserForm";
 class UserView extends Skeleton<User, UserProps>{
 
   regionMap:{ [key: string]: string } = {
-    userForm: "div#user-form",
-    userDetails: "div#user-details"
+    userDetails: "div#user-details",
+    userForm: "div#user-form"
   }
 
   onRender = ():void=> {
