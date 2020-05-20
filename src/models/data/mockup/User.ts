@@ -1,7 +1,7 @@
 import { DataModel } from "../DataModel";
-import { Attributes } from "../../prop/Attributes";
-import { Eventing } from "../../event/Eventing";
-import { APISync } from "../../sync/APISync";
+import { Attributes } from "../../mockup/prop/Attributes";
+import { Eventing } from "../../mockup/event/Eventing";
+import { APISync } from "../../mockup/sync/APISync";
 import { Collection } from "../Collection";
 
 interface UserProps {

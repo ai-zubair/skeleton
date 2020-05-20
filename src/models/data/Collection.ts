@@ -1,4 +1,4 @@
-import { Eventing } from "../event/Eventing";
+import { Eventing } from "../mockup/event/Eventing";
 import axios, { AxiosResponse } from 'axios';
 
 interface Deserializer<T,K>{
