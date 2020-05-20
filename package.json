@@ -2,7 +2,7 @@
   "name": "skeleton",
   "version": "1.0.0",
   "description": "A barebones web framework written in TS",
-  "main": "index.js",
+  "main": "src/view/Skeleton.ts",
   "scripts": {
     "start:server": "json-server -w db.json",
     "start:parcel": "parcel index.html"
